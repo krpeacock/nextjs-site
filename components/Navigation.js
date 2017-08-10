@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Router from 'next/router'
 
 // Next.js uses these Link components for cross-page routing
 
@@ -8,17 +7,17 @@ export default () => (
   <nav>
     <Link href='/'>
       <a 
-        className={Router.pathname ==='/' ? 'active' : ''}
+        className={window.location.pathname ==='/' ? 'active' : ''}
       >Home</a>
     </Link>
     <Link href='/blog'>
       <a
-        className={Router.pathName ==='/blog' ? 'active' : ''}
+        className={window.location.pathName ==='/blog' ? 'active' : ''}
       >Blog</a>
     </Link>
     <Link href='/contact'>
       <a
-        className={Router.pathName ==='/contact' ? 'active' : ''}
+        className={window.location.pathName ==='/contact' ? 'active' : ''}
       >Contact</a>
     </Link>
     <style jsx>{`

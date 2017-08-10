@@ -33,7 +33,7 @@ const Index = () => (
           width: 100vw;
           position: absolute;
           left: 0;
-          padding: 3.5em 1.75em
+          padding: 3.5em 0
         }
       `}
     </style>
