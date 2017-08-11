@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "next": "^3.0.3",
+    "next-routes": "^1.0.40",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-no-ssr": "^1.1.0"
   }
 }
