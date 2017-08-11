@@ -11,8 +11,9 @@ const Index = () => (
     headProperties={headProperties}
   >
     <div className="banner">
-      <h1>Creative Developer</h1>
-      <p>My name is Kyle Peacock. I am a full-stack ECMAScript developer based in San&nbsp;Francisco,&nbsp;California.
+      <h1>Kyle Peacock</h1>
+      <h2>Creative Developer</h2>
+      <p>I am a former law student turned full-stack ECMAScript developer, based in San&nbsp;Francisco,&nbsp;California.
       This website is designed to showcase my professional work and host my&nbsp;personal&nbsp;projects.</p>
       <p>
         Visit the&nbsp;
@@ -28,15 +29,15 @@ const Index = () => (
         <p>Recently, JavaScript development has become the standard for modern web applications. The environment is constantly evolving, thanks to passionate open-source developers, and I am always reading and experimenting to introduce new tools and efficiencies into my work.</p>
       </div>
       <div className="item-b">
-        <h3>Tinkering</h3>
-        <p>foo bar</p>
+        <h3>Prototyping</h3>
+        <p>While I am comfortable developing for established projects, rapid prototyping is where I shine. During my training in web development, I would build applications from scratch daily, iterating and improving my technique. My favorite projects have all started from scratch to address a specific problem.</p>
       </div>
       <div className="item-c">
-        <h3>stuff</h3>
+        <h3>Hardware / IOT</h3>
         <p>foo bar</p>
       </div>
       <div className="item-d">
-        <h3>stuff</h3>
+        <h3>User Experience</h3>
         <p>foo bar</p>
       </div>
     </section>
@@ -51,8 +52,14 @@ const Index = () => (
         }
         h1 {
           font-size: 2em;
+          margin: 0 auto 0;
+          color: #415161;
+        }
+        h2 {
+          font-size: 1.2em;
           margin: 0 auto 1em;
-          color: #415161
+          color: #8496b3;
+          text-align: center;
         }
         p {
           color: #8496b3;
@@ -104,6 +111,22 @@ const Index = () => (
             grid-template-columns: 1fr;
             grid-auto-flow: row;
             grid-template-rows: repeat(4, 1fr);
+          }
+          .item-a {
+            grid-column: 1;
+            grid-row: 1;
+          }
+          .item-b {
+            grid-column: 1;
+            grid-row: 2;
+          }
+          .item-c {
+            grid-column: 1;
+            grid-row: 3;
+          }
+          .item-d {
+            grid-column: 1;
+            grid-row: 4;
           }
         }
       `}
