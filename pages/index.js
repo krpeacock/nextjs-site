@@ -12,7 +12,7 @@ const Index = () => (
   >
     <div className="banner">
       <h1>Kyle Peacock</h1>
-      <h2>Creative Developer</h2>
+      <h4>Creative Developer</h4>
       <p>I am a former law student turned full-stack ECMAScript developer, based in San&nbsp;Francisco,&nbsp;California.
       This website is designed to showcase my professional work and host my&nbsp;personal&nbsp;projects.</p>
       <p>
@@ -41,6 +41,10 @@ const Index = () => (
         <p>You most likely came here because you are a recruiter, someone I've met, or someone who enjoyed something I wrote. Most people who visit a portfolio site wouldn't read this paragraph, because this design directs attention to my action items: contact info, my blog, and my project gallery down below.</p>
       </div>
     </section>
+    <hr/>
+    <section>
+      <h2>My Projects</h2>
+    </section>
     <style jsx>
       {`
         .banner > h1, .banner > p {
@@ -50,12 +54,18 @@ const Index = () => (
         .banner > a {
           margin-left: 0;
         }
+        section {
+          margin: 5em 0
+        }
         h1 {
           font-size: 2em;
           margin: 0 auto 0;
           color: #415161;
         }
         h2 {
+          text-align: center;
+        }
+        h4 {
           font-size: 1.2em;
           margin: 0 auto 1em;
           color: #8496b3;
@@ -83,7 +93,7 @@ const Index = () => (
         #specialties {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          grid-gap: 3em;
+          grid-gap: 2em;
           grid-template-rows: 1fr 1fr;
           text-align: center;
         }
