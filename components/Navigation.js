@@ -6,11 +6,7 @@ import 'isomorphic-fetch'
 // Next.js uses these Link components for cross-page routing
 
 export default class Navigation extends React.Component {
-  static async getInitialProps ({query}) {
-    // query.slug
-    alert (query);
-  }
-
+  
   render () {
     let pathname = this.props.url
     console.log(pathname)
@@ -30,6 +26,29 @@ export default class Navigation extends React.Component {
           className={pathname ==='/contact' ? 'active' : ''}
         >Contact</a>
       </Link>
+      <style jsx global>{`
+        * {
+          font-family: "Roboto" !important;
+        }
+        .app {
+          width: 100vw;
+          position: relative;
+          left: 0;
+          top: 0;
+          margin-top: 1em;
+        }
+        nav > a, nav > a:visited {
+          margin: 1em;
+          text-decoration: none;
+          color: #b5c0d1;
+        }
+        a:hover, a.active {
+          color: #415161;
+        }
+        nav {
+          margin-bottom: 1em;
+        }
+      `}</style>
     </nav>)
   }
 }

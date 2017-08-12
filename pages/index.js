@@ -34,18 +34,18 @@ const Index = () => (
       </div>
       <div className="item-c">
         <h3>Hardware / IOT</h3>
-        <p>foo bar</p>
+        <p>While there are fewer opportunities to do build projects with integrated hardware professionally, it's something I love doing. I've been a maker since I was a kid, and I fell in love with Raspberry Pi and Node.js as a way to quickly add connected functionality to a project.</p>
       </div>
       <div className="item-d">
         <h3>User Experience</h3>
-        <p>foo bar</p>
+        <p>You most likely came here because you are a recruiter, someone I've met, or someone who enjoyed something I wrote. Most people who visit a portfolio site wouldn't read this paragraph, because this design directs attention to my action items: contact info, my blog, and my project gallery down below.</p>
       </div>
     </section>
     <style jsx>
       {`
         .banner > h1, .banner > p {
           text-align: center;
-          padding: 0 20vw;
+          padding: 0 10vw;
         }
         .banner > a {
           margin-left: 0;
@@ -60,6 +60,7 @@ const Index = () => (
           margin: 0 auto 1em;
           color: #8496b3;
           text-align: center;
+          font-weight: 500;
         }
         p {
           color: #8496b3;
@@ -77,7 +78,7 @@ const Index = () => (
           width: 100vw;
           position: relative;
           left: 0;
-          padding: 3.5em 0
+          padding: 3em 0
         }
         #specialties {
           display: grid;
