@@ -11,7 +11,7 @@ const Index = () => (
     headProperties={headProperties}
   >
     <div className="banner">
-      <h1>Kyle Peacock</h1>
+      <h1>DUmbhead Peacock</h1>
       <h4>Creative Developer</h4>
       <p>I am a former law student turned full-stack ECMAScript developer, based in San&nbsp;Francisco,&nbsp;California.
       This website is designed to showcase my professional work and host my&nbsp;personal&nbsp;projects.</p>
