@@ -1,10 +1,22 @@
 import Layout from '../components/Layout.js';
 import Link from 'next/link';
 import React from 'react';
+import Carousel from '../components/Carousel.js';
 
 var headProperties = (
   <title>Kyle Peacock</title>
 )
+
+let carouselItems = [
+  {
+    src: "http://peacockweb.net/uploads/8/0/0/1/80018494/screen-shot-2017-07-12-at-2-49-16-pm_orig.png",
+    title: "my amazing project"
+  },
+  {
+    src: "http://peacockweb.net/uploads/8/0/0/1/80018494/screen-shot-2017-07-12-at-2-40-19-pm_orig.png",
+    title: 'another project'
+  }
+]
 
 const Kyle = () => (
   <Layout
@@ -44,6 +56,9 @@ const Kyle = () => (
     <hr/>
     <section>
       <h2>My Projects</h2>
+      <Carousel
+        carouselItems={carouselItems}
+      />
     </section>
     <style jsx global>
       {`
@@ -64,6 +79,9 @@ const Kyle = () => (
         }
         h2 {
           text-align: center;
+        }
+        h3 {
+          color: black
         }
         h4 {
           font-size: 1.2em;

@@ -7,7 +7,7 @@ import 'isomorphic-fetch'
 
 export default class Navigation extends React.Component {
   
-  render () {
+  render (props) {
     let pathname = this.props.url
     console.log(pathname)
     return (<nav>
