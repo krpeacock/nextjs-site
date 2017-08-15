@@ -32,7 +32,8 @@ export default class Navigation extends React.Component {
         }
         .app {
           width: 100vw;
-          position: relative;
+          position: absolute;
+          overflow-x: hidden;
           left: 0;
           top: 0;
           margin-top: 1em;
