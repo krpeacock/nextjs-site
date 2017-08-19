@@ -12,18 +12,26 @@ export default class Carousel extends React.Component {
       carouselItems: this.props.carouselItems,
       activeIndex: 0,
       activeItem: activeItem,
-      activeItemSrc: activeItemSrc
+      activeItemSrc: activeItemSrc,
+      autoPlay: true
     })
   }
   
-  step(event){
-    var target = event.currentTarget;
-    var direction = target['dataset']['direction'];
+  step(direction){
     var carouselItems = this.state.carouselItems
 
     let activeIndex = this.state.activeIndex;
-    if (direction === "forward" && activeIndex < carouselItems.length - 1) activeIndex++
-    if (direction === "back" && activeIndex > 0)  activeIndex--
+    if (direction === "forward")
+      if( activeIndex < carouselItems.length - 1) 
+        activeIndex ++
+      else 
+        activeIndex = 0;
+    else if (direction === "back") 
+      if (activeIndex > 0)  
+        activeIndex --
+      else
+        activeIndex = carouselItems.length - 1
+    
     this.setActiveIndex(activeIndex)
   }
 
@@ -39,6 +47,18 @@ export default class Carousel extends React.Component {
     })
   }
 
+  componentDidUpdate(){
+    let autoPlay = this.state.autoPlay;
+    var autoPlayInterval = setInterval(function(){
+      if (autoPlay){
+        this.step('forward');
+      }
+      else {
+        clearInterval(autoPlayInterval);
+      }
+    }.bind(this), 5000)
+  }
+
   render(){
     let carouselTiles = this.state.carouselItems.map((item, index)=>{
       return (
@@ -51,7 +71,7 @@ export default class Carousel extends React.Component {
               backgroundImage: `url(${item.src})`,
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
-              
+              marginRight: '10px'
             }}
             onClick={function(){this.setActiveIndex(index)}.bind(this)}
           />
@@ -65,16 +85,14 @@ export default class Carousel extends React.Component {
         <div className="slider-buttons">
           <button 
             title="carousel back button"
-            data-direction="back"
-            onClick={this.step.bind(this)}
+            onClick={function(){this.step('back')}.bind(this)}
             className="back"
           >
             <Icon icon="play-left"/>
           </button>
           <button 
             title="carousel forward button"
-            data-direction="forward"
-            onClick={this.step.bind(this)}
+            onClick={function(){this.step('forward')}.bind(this)}
             className="forward"
           >
             <Icon icon="play-right"/>
@@ -89,7 +107,9 @@ export default class Carousel extends React.Component {
             margin: 'auto',
             backgroundImage: `url(${activeItemSrc})`,
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain'
+            backgroundSize: 'contain',
+            backgroundPosition: 'center',
+            marginBottom: '3em'
           }}
         >
         </div>
@@ -119,15 +139,21 @@ export default class Carousel extends React.Component {
         }
         img.thumbnail {
           width: 20px
+          margin-right: 10px
         }
-        .thumbnail-list {
-          width: 90vw
+        ul.thumbnail-list {
+          list-style: none
+          width: 80vw
+          maxWidth: 700px
+          margin: auto
           display: flex
           flex-direction: row
+          padding-left: 0
         }
-        li {
-          width: 10px
-          
+        .thumbnail-list > li {
+          display: flex
+          width: 30px
+          margin-right: 10px
         }
       `}</style>
     </section>
