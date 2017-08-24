@@ -10,11 +10,15 @@ var headProperties = (
 let carouselItems = [
   {
     src: "http://peacockweb.net/uploads/8/0/0/1/80018494/screen-shot-2017-07-12-at-2-49-16-pm_orig.png",
-    title: "my amazing project"
+    title: "Audiusa.com",
+    description: "Front-end development for Audi USA, using AEM and CoffeeScript and all that jazz",
+    url: "https://www.audiusa.com/"
   },
   {
     src: "http://peacockweb.net/uploads/8/0/0/1/80018494/screen-shot-2017-07-12-at-2-40-19-pm_orig.png",
-    title: 'another project'
+    title: 'Wells Fargo - Getting College Ready',
+    description: "Single Page App for Wells Fargo using React with Typescript",
+    url: "https://welcome.wf.com/get-college-ready-tracker/#Home"
   }
 ]
 

@@ -39,11 +39,9 @@ export default class Carousel extends React.Component {
     var carouselItems = this.state.carouselItems
 
     let activeItem = carouselItems[index]
-    let activeItemSrc = activeItem['src']
     this.setState({
       activeIndex: index,
       activeItem,
-      activeItemSrc
     })
   }
 
@@ -79,9 +77,7 @@ export default class Carousel extends React.Component {
         </li>
       )
     })
-    var activeItemSrc = this.state.activeItemSrc
     return <section className="carousel" aria-labelledby="carouselheading">
-      <h3 id="carouselheading" className="is-hidden">Past projects</h3>
       <div className="slider">
         <div className="slider-buttons">
           <button 
@@ -99,20 +95,23 @@ export default class Carousel extends React.Component {
             <Icon icon="play-right"/>
           </button>
         </div>
-        <div 
-          className="carouselActiveImage"
-          style={{
-            width: '80vw',
-            maxWidth: '700px',
-            height: '60vw',
-            margin: 'auto',
-            backgroundImage: `url(${activeItemSrc})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
-            backgroundPosition: 'center',
-            marginBottom: '3em'
-          }}
-        >
+        <a className="slide" href={this.state.activeItem["url"]}>  
+          <img 
+            className="carouselActiveImage"
+            src={this.state.activeItem['src']}
+            style={{
+              maxWidth: '80vw',
+              maxHeight: '60vw',
+              position: 'relative',
+              zIndex: '-1',
+              marginTop: 'auto'
+            }}
+            title={this.state.activeItem['title']}
+          />
+        </a>
+        <div className="carouselDescription">
+          <p>{this.state.activeItem['description']}</p>
+          <div className="descriptionBackground"></div>
         </div>
       </div>
       <ul className="thumbnail-list">
@@ -123,20 +122,37 @@ export default class Carousel extends React.Component {
           visibility: hidden
         }
         .slider {
-          width: 90vw
-          max-width: 700px;
+          height: 60vw
+          width: 80vw
           margin: auto
+          display: grid
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 0
+          grid-template-rows: repeat(4, 1fr);
+          overflow: hidden
         }
-        .carouselActiveImage {
-          width: '80vw',
-          height: '60vw',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'contain'
+        .slide {
+          grid-column: 1/4
+          grid-row: 1/5
+          overflow: hidden
+          display: flex
+          justify-content: center
+          align-content: flex-end
         }
         .slider-buttons {
-          float: right
           position: relative;
           z-index: 1
+          grid-column: 3/4
+          grid-row: 1
+          display: flex
+          justify-content: flex-end
+          height: 1.8em
+        }
+        .slider-buttons.back {
+          float: left
+        }
+        .slider-buttons.forward {
+          float: right
         }
         img.thumbnail {
           width: 20px
@@ -155,6 +171,37 @@ export default class Carousel extends React.Component {
           display: flex
           width: 30px
           margin-right: 10px
+        }
+        .carouselDescription {
+          width: 80vw
+          position: relative
+          z-index: 0
+          overflow: hidden
+          float: center
+          clear: none
+          grid-column: 1/3
+          grid-row: 3/5
+          display: grid
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr;
+        }
+        .descriptionBackground {
+          width: 80vw
+          background-color: black
+          opacity: 0.5
+          z-index: 1
+          grid-column: 1/1
+          grid-row: 2/2
+        }
+        .carouselDescription p {
+          color: white
+          opacity: 1
+          position: relative
+          z-index: 2
+          text-align: left
+          text-shadow: 0 0 5px #000
+          grid-column: 1/1
+          grid-row: 2/2
         }
       `}</style>
     </section>
