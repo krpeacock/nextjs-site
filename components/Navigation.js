@@ -14,17 +14,17 @@ export default class Navigation extends React.Component {
       <Link href='/'>
         <a 
           className={pathname ==='/' ? 'active' : ''}
-        >Home</a>
+        >home</a>
       </Link>
       <Link href='/blog'>
         <a
           className={pathname ==='/blog' ? 'active' : ''}
-        >Blog</a>
+        >blog</a>
       </Link>
       <Link href='/contact'>
         <a
           className={pathname ==='/contact' ? 'active' : ''}
-        >Contact</a>
+        >contact</a>
       </Link>
       <style jsx global>{`
         * {
@@ -42,6 +42,7 @@ export default class Navigation extends React.Component {
           margin: 1em;
           text-decoration: none;
           color: #b5c0d1;
+          font-size: 1.15em;
         }
         a:hover, a.active {
           color: #415161;

@@ -114,6 +114,8 @@ const Kyle = () => (
           grid-gap: 2em;
           grid-template-rows: 1fr 1fr;
           text-align: center;
+          width: 80vw;
+          margin: auto;
         }
         #specialties > * > p {
           padding: 0 10%;

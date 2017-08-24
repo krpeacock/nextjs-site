@@ -48,15 +48,16 @@ export default class Carousel extends React.Component {
   }
 
   componentDidUpdate(){
-    let autoPlay = this.state.autoPlay;
-    var autoPlayInterval = setInterval(function(){
-      if (autoPlay){
-        this.step('forward');
-      }
-      else {
-        clearInterval(autoPlayInterval);
-      }
-    }.bind(this), 5000)
+    // Todo: add autoplay
+    // let autoPlay = this.state.autoPlay;
+    // var autoPlayInterval = setInterval(function(){
+    //   if (autoPlay){
+    //     this.step('forward');
+    //   }
+    //   else {
+    //     clearInterval(autoPlayInterval);
+    //   }
+    // }.bind(this), 5000)
   }
 
   render(){

@@ -75,6 +75,9 @@ const Index = () => (
           margin: 0.5em;
           font-weight: 200;
         }
+        #profiles {
+          margin: 2em;
+        }
     `}
     </style>
   </Layout>
