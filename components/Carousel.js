@@ -77,6 +77,42 @@ export default class Carousel extends React.Component {
         </li>
       )
     })
+    let slides = this.state.carouselItems.map((item, index)=>{
+      return (
+        <div 
+          className={"slide"}
+          key={index}
+          style={{
+            visibility: `${index === this.state.activeIndex? 'visible':'hidden'}`,
+            opacity: `${index === this.state.activeIndex? '1':'0'}`,
+            gridColumn: '1/4',
+            gridRow: '1/5',
+            display: 'flex',
+            justifyContent: 'center',
+            alignContent: 'flex-end',
+            transition: 'all 300ms ease-in-out'
+          }}>
+          <a 
+            href={item["url"]}
+            style={{
+              marginTop:'auto'
+            }}>  
+            <img 
+              className="carouselActiveImage"
+              src={item['src']}
+              style={{
+                maxWidth: '80vw',
+                maxHeight: '60vh',
+                position: 'relative',
+                zIndex: '-1',
+                marginTop: 'auto'
+              }}
+              title={item['title']}
+            />
+          </a>
+        </div>
+      )
+    })
     return <section className="carousel" aria-labelledby="carouselheading">
       <div className="slider">
         <div className="slider-buttons">
@@ -95,20 +131,7 @@ export default class Carousel extends React.Component {
             <Icon icon="play-right"/>
           </button>
         </div>
-        <a className="slide" href={this.state.activeItem["url"]}>  
-          <img 
-            className="carouselActiveImage"
-            src={this.state.activeItem['src']}
-            style={{
-              maxWidth: '80vw',
-              maxHeight: '60vw',
-              position: 'relative',
-              zIndex: '-1',
-              marginTop: 'auto'
-            }}
-            title={this.state.activeItem['title']}
-          />
-        </a>
+        {slides}
         <div className="carouselDescription">
           <p>{this.state.activeItem['description']}</p>
           <div className="descriptionBackground"></div>
@@ -121,23 +144,21 @@ export default class Carousel extends React.Component {
         .is-hidden {
           visibility: hidden
         }
+        .is-active {
+          visibility: visible
+        }
         .slider {
-          height: 60vw
+          maxHeight: 60vh
           width: 80vw
-          margin: auto
+          margin: 2em auto
           display: grid
           grid-template-columns: repeat(3, 1fr);
           grid-gap: 0
           grid-template-rows: repeat(4, 1fr);
           overflow: hidden
         }
-        .slide {
-          grid-column: 1/4
-          grid-row: 1/5
+        .slide a {
           overflow: hidden
-          display: flex
-          justify-content: center
-          align-content: flex-end
         }
         .slider-buttons {
           position: relative;
@@ -175,12 +196,12 @@ export default class Carousel extends React.Component {
         .carouselDescription {
           width: 80vw
           position: relative
-          z-index: 0
+          top: -4px
           overflow: hidden
           float: center
           clear: none
           grid-column: 1/3
-          grid-row: 3/5
+          grid-row: 4
           display: grid
           grid-template-columns: 1fr;
           grid-template-rows: 1fr;

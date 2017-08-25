@@ -74,7 +74,7 @@ const Kyle = () => (
           margin-left: 0;
         }
         section {
-          margin: 5em 0
+          margin: 3em 0
         }
         h1 {
           font-size: 2em;
@@ -85,7 +85,9 @@ const Kyle = () => (
           text-align: center;
         }
         h3 {
-          color: black
+          color: #8496b3;
+          text-align: left
+          margin: 0.5em;
         }
         h4 {
           font-size: 1.2em;
@@ -117,12 +119,11 @@ const Kyle = () => (
           grid-template-columns: repeat(2, 1fr);
           grid-gap: 2em;
           grid-template-rows: 1fr 1fr;
-          text-align: center;
+          text-align: left;
           width: 80vw;
-          margin: auto;
+          margin: 3em auto;
         }
-        #specialties > * > p {
-          padding: 0 10%;
+        #specialties * p {
         }
         .item-a {
           grid-column: 1 / 2;
