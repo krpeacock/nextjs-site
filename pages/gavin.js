@@ -8,6 +8,7 @@ var headProperties = (
 const Gavin = () => (
   <Layout
     headProperties={headProperties}
+    rootUrl="/gavin"
   >
   </Layout>
 )

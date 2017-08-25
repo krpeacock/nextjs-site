@@ -8,6 +8,7 @@ var headProperties = (
 const Will = () => (
   <Layout
     headProperties={headProperties}
+    rootUrl="/will"
   >
   </Layout>
 )

@@ -7,7 +7,7 @@ export default (props) => (
     <SharedHead>
       {props.headProperties}
     </SharedHead>
-    <Header/>
+    <Header rootUrl={props.rootUrl}/>
     <main>
       {props.children}
     </main>

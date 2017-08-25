@@ -8,23 +8,16 @@ import 'isomorphic-fetch'
 export default class Navigation extends React.Component {
   
   render (props) {
-    let pathname = this.props.url
-    console.log(pathname)
+    var rootUrl = this.props.rootUrl ? this.props.rootUrl : ""
     return (<nav>
-      <Link href='/'>
-        <a 
-          className={pathname ==='/' ? 'active' : ''}
-        >home</a>
+      <Link href={`${rootUrl}/`}>
+        <a>home</a>
       </Link>
-      <Link href='/blog'>
-        <a
-          className={pathname ==='/blog' ? 'active' : ''}
-        >blog</a>
+      <Link href={`http://peacockweb.net/blog`}>
+        <a>blog</a>
       </Link>
-      <Link href='/contact'>
-        <a
-          className={pathname ==='/contact' ? 'active' : ''}
-        >contact</a>
+      <Link href={`${rootUrl}/contact`}>
+        <a>contact</a>
       </Link>
       <style jsx global>{`
         * {

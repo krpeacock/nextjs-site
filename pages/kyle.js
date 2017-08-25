@@ -25,6 +25,7 @@ let carouselItems = [
 const Kyle = () => (
   <Layout
     headProperties={headProperties}
+    rootUrl="/kyle"
   >
     <div className="banner">
       <h1>Kyle Peacock</h1>

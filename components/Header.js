@@ -1,10 +1,10 @@
 import Navigation from './Navigation.js';
 import React from 'react'
 
-export default () => (
+export default (props) => (
   <header>
     <img src="http://www.peacockweb.net/uploads/8/0/0/1/80018494/1144651.png" alt="Peacock Web Logo" id="logo" />
-    <Navigation>
+    <Navigation rootUrl={props.rootUrl}>
     </Navigation>
     <style jsx>{`
       header {
