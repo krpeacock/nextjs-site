@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
+const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production';
 const next = require('next');
 const pathMatch = require('path-match')
@@ -18,8 +19,8 @@ app.prepare().then(() => {
         return handle(req, res);
     })
 
-    server.listen(3000, (err) => {
+    server.listen(port, (err) => {
         if (err) throw err;
-        console.log('Server ready on http://localhost:3000');
+        console.log(`Server ready on http://localhost:${port}`);
     })
 })
