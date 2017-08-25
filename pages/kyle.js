@@ -19,6 +19,18 @@ let carouselItems = [
     title: 'Wells Fargo - Getting College Ready',
     description: "Single Page App for Wells Fargo using React with Typescript",
     url: "https://welcome.wf.com/get-college-ready-tracker/#Home"
+  },
+  {
+      src: "http://www.peacockweb.net/uploads/8/0/0/1/80018494/screen-shot-2016-09-29-at-10-12-27-am_orig.png",
+      title: "SF Bach Choir",
+      description: "Webmaster for the SF Bach Choir",
+      url: "https://www.sfbach.org/"
+  },
+  {
+      src: "http://www.peacockweb.net/uploads/8/0/0/1/80018494/screen-shot-2016-07-12-at-3-31-21-pm_orig.png",
+      title: "Power Strip",
+      description: "Using a Raspberry Pi Zero, I built a smart power strip that uses a Node.js service with a React.js front-end to control each of the outlets.",
+      url: "http://strip.peacockweb.net/"
   }
 ]
 
