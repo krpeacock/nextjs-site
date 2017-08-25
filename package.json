@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "npm run build && NODE_ENV=dev PORT=80 node server.js"
+    "deploy": "gcloud app deploy",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
