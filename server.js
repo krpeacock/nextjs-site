@@ -18,8 +18,11 @@ app.prepare().then(() => {
         return handle(req, res);
     })
 
-    server.listen(3000, (err) => {
+    const handler = server.listen(8080, (err) => {
         if (err) throw err;
-        console.log('Server ready on http://localhost:3000');
+        const host = handler.address().address;
+        const port = handler.address().port;
+
+        console.log(`Example app listening at http://${host}:${port}`);
     })
 })
