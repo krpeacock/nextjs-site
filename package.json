@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "deploy": "gcloud app deploy",
     "start": "node server.js"
   },
   "author": "",
